@@ -11,6 +11,7 @@ class AnyWordsPartyTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavigationBar()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -18,7 +19,18 @@ class AnyWordsPartyTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-
+    private func configureNavigationBar() {
+        let addButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"),
+                                        style: .plain,
+                                        target: self,
+                                        action: #selector(presentAddingWordViewController))
+        navigationItem.rightBarButtonItem = addButtonItem
+    }
+    
+    @objc
+    private func presentAddingWordViewController() {
+        
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
