@@ -48,7 +48,9 @@
                             <outlet property="delegate" destination="1V6-4X-tyx" id="Xum-WF-mdS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="아무말 대잔치" id="Jzk-SV-Yr2"/>
+                    <navigationItem key="navigationItem" title="아무말 대잔치" id="Jzk-SV-Yr2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ldp-rI-3Xe"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vCg-Je-bIx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
