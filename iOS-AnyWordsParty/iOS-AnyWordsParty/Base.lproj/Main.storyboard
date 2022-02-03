@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -49,17 +50,97 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="아무말 대잔치" id="Jzk-SV-Yr2">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ldp-rI-3Xe"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ldp-rI-3Xe">
+                            <connections>
+                                <segue destination="Shk-BE-OaZ" kind="presentation" id="ha8-Yf-dTa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vCg-Je-bIx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="907" y="96"/>
         </scene>
+        <!--Input View Controller-->
+        <scene sceneID="Ucx-UC-hKF">
+            <objects>
+                <viewController id="Shk-BE-OaZ" customClass="InputViewController" customModule="iOS_AnyWordsParty" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="98s-B2-9P3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아무말 입력기💬" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Jw-xt-lO0">
+                                <rect key="frame" x="105.5" y="170" width="203" height="37"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="문장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TaC-3E-ZIN">
+                                <rect key="frame" x="30" y="385.5" width="24.5" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="종류" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7p3-Ov-rko">
+                                <rect key="frame" x="30" y="442.5" width="24.5" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="75q-VF-08p">
+                                <rect key="frame" x="84.5" y="377" width="299.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XUI-l6-h2C">
+                                <rect key="frame" x="84.5" y="435.5" width="299.5" height="32"/>
+                                <segments>
+                                    <segment title="유머"/>
+                                    <segment title="명언"/>
+                                </segments>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCG-54-rfs">
+                                <rect key="frame" x="30" y="616.5" width="354" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Io3-ng-0QS"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="저장하기"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zjO-vK-JT9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7p3-Ov-rko" firstAttribute="centerY" secondItem="XUI-l6-h2C" secondAttribute="centerY" id="0oa-ka-UAW"/>
+                            <constraint firstItem="7Jw-xt-lO0" firstAttribute="centerX" secondItem="98s-B2-9P3" secondAttribute="centerX" id="1Nu-ad-Cbs"/>
+                            <constraint firstItem="75q-VF-08p" firstAttribute="leading" secondItem="TaC-3E-ZIN" secondAttribute="trailing" priority="750" constant="30" id="8OD-7e-zWB"/>
+                            <constraint firstItem="75q-VF-08p" firstAttribute="top" secondItem="7Jw-xt-lO0" secondAttribute="bottom" constant="170" id="9ye-f5-Tf4"/>
+                            <constraint firstItem="pCG-54-rfs" firstAttribute="leading" secondItem="7p3-Ov-rko" secondAttribute="leading" id="BMf-18-wZm"/>
+                            <constraint firstItem="zjO-vK-JT9" firstAttribute="trailing" secondItem="75q-VF-08p" secondAttribute="trailing" constant="30" id="Duo-qw-oH0"/>
+                            <constraint firstItem="7p3-Ov-rko" firstAttribute="leading" secondItem="zjO-vK-JT9" secondAttribute="leading" constant="30" id="Hg0-RV-Mes"/>
+                            <constraint firstItem="TaC-3E-ZIN" firstAttribute="leading" secondItem="zjO-vK-JT9" secondAttribute="leading" constant="30" id="LD9-fm-8hc"/>
+                            <constraint firstItem="TaC-3E-ZIN" firstAttribute="centerY" secondItem="75q-VF-08p" secondAttribute="centerY" id="MyL-mD-qSL"/>
+                            <constraint firstItem="7Jw-xt-lO0" firstAttribute="top" secondItem="zjO-vK-JT9" secondAttribute="top" constant="170" id="USg-Aq-7ka"/>
+                            <constraint firstItem="pCG-54-rfs" firstAttribute="trailing" secondItem="XUI-l6-h2C" secondAttribute="trailing" id="aN0-7y-BFo"/>
+                            <constraint firstItem="XUI-l6-h2C" firstAttribute="leading" secondItem="7p3-Ov-rko" secondAttribute="trailing" priority="750" constant="30" id="sUC-Gf-6s6"/>
+                            <constraint firstItem="zjO-vK-JT9" firstAttribute="trailing" secondItem="XUI-l6-h2C" secondAttribute="trailing" constant="30" id="tL0-WT-Z4R"/>
+                            <constraint firstItem="7p3-Ov-rko" firstAttribute="top" secondItem="TaC-3E-ZIN" secondAttribute="bottom" constant="40" id="uSx-d1-nmz"/>
+                            <constraint firstItem="pCG-54-rfs" firstAttribute="top" secondItem="XUI-l6-h2C" secondAttribute="bottom" constant="150" id="ush-8X-wzI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fA7-Lg-KSl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1670" y="96"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

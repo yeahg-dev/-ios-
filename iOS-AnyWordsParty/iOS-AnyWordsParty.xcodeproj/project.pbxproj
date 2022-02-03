@@ -13,6 +13,7 @@
 		63F906AC27ABBE2900451844 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63F906AB27ABBE2900451844 /* Assets.xcassets */; };
 		63F906AF27ABBE2900451844 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F906AD27ABBE2900451844 /* LaunchScreen.storyboard */; };
 		63F906B727ABC5EA00451844 /* AnyWordsPartyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F906B627ABC5EA00451844 /* AnyWordsPartyTableViewController.swift */; };
+		63F906B927ABFEC000451844 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F906B827ABFEC000451844 /* InputViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		63F906AE27ABBE2900451844 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63F906B027ABBE2900451844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63F906B627ABC5EA00451844 /* AnyWordsPartyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyWordsPartyTableViewController.swift; sourceTree = "<group>"; };
+		63F906B827ABFEC000451844 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				63F906A227ABBE2700451844 /* AppDelegate.swift */,
 				63F906A427ABBE2700451844 /* SceneDelegate.swift */,
 				63F906A827ABBE2700451844 /* Main.storyboard */,
+				63F906B827ABFEC000451844 /* InputViewController.swift */,
 				63F906B627ABC5EA00451844 /* AnyWordsPartyTableViewController.swift */,
 				63F906AB27ABBE2900451844 /* Assets.xcassets */,
 				63F906AD27ABBE2900451844 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				63F906A327ABBE2700451844 /* AppDelegate.swift in Sources */,
 				63F906B727ABC5EA00451844 /* AnyWordsPartyTableViewController.swift in Sources */,
 				63F906A527ABBE2700451844 /* SceneDelegate.swift in Sources */,
+				63F906B927ABFEC000451844 /* InputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
