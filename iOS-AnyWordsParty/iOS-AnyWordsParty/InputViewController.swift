@@ -42,12 +42,9 @@ class InputViewController: UIViewController {
             return
         }
         
-        guard let sentence = sentence else {
-            return
-        }
         let joke = NSManagedObject(entity: entity, insertInto: self.container.viewContext)
-        joke.setValue(UUID().uuidString, forKey: "id")
-        joke.setValue(sentence, forKey: "body")
+        joke.setValue(NSUUID(), forKey: "id")
+        joke.setValue(sentence?.text, forKey: "body")
         joke.setValue(category, forKey: "category")
         
         do {
