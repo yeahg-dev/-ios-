@@ -10,7 +10,17 @@ import CoreData
 
 class InputViewController: UIViewController {
     
+    @IBOutlet weak var sentence: UITextField?
+    @IBOutlet weak var typeSegmentedControl: UISegmentedControl?
+    
     var container: NSPersistentContainer!
+    lazy var category: String? = {
+        if typeSegmentedControl?.selectedSegmentIndex == 0 {
+            return "trend"
+        } else {
+            return "old fashion"
+        }
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +33,29 @@ class InputViewController: UIViewController {
         // The persistent container is available.
     }
     
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        // Returns the entity with the specified name from the managed object model associated with the specified managed object context’s persistent store coordinator.
+        guard let entity = NSEntityDescription.entity(
+            forEntityName: "Joke",
+            in: self.container.viewContext
+        ) else {
+            return
+        }
+        
+        guard let sentence = sentence else {
+            return
+        }
+        let joke = NSManagedObject(entity: entity, insertInto: self.container.viewContext)
+        joke.setValue(UUID().uuidString, forKey: "id")
+        joke.setValue(sentence, forKey: "body")
+        joke.setValue(category, forKey: "category")
+        
+        do {
+            try self.container.viewContext.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
     
     /*
      // MARK: - Navigation

@@ -107,6 +107,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="저장하기"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="Shk-BE-OaZ" eventType="touchUpInside" id="NK6-zL-oA2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zjO-vK-JT9"/>
@@ -129,6 +132,10 @@
                             <constraint firstItem="pCG-54-rfs" firstAttribute="top" secondItem="XUI-l6-h2C" secondAttribute="bottom" constant="150" id="ush-8X-wzI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sentence" destination="75q-VF-08p" id="PpM-km-caR"/>
+                        <outlet property="typeSegmentedControl" destination="XUI-l6-h2C" id="QQ7-iE-JoL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fA7-Lg-KSl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
