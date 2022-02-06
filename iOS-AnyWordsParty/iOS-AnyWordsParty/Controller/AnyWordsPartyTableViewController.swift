@@ -6,16 +6,30 @@
 //
 
 import UIKit
+import CoreData
 
 class AnyWordsPartyTableViewController: UITableViewController {
-
+    
+    var container: NSPersistentContainer!
+    private var jokes: [Joke] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.container = appDelegate.persistentContainer
+        
+        guard container != nil else {
+            fatalError("This view needs a persistent container.")
+        }
+    }
+    
+    func fetchJokes() {
+        do {
+            let jokes = try self.container.viewContext.fetch(Joke.fetchRequest())
+            self.jokes += jokes
+        } catch {
+            print(error.localizedDescription)
+        }
     }
   
     // MARK: - Table view data source

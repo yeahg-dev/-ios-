@@ -14,6 +14,7 @@ class InputViewController: UIViewController {
     @IBOutlet weak var typeSegmentedControl: UISegmentedControl?
     
     var container: NSPersistentContainer!
+    
     lazy var category: String? = {
         if typeSegmentedControl?.selectedSegmentIndex == 0 {
             return "trend"
