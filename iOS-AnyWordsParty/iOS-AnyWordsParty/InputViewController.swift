@@ -35,7 +35,8 @@ class InputViewController: UIViewController {
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         // Returns the entity with the specified name from the managed object model associated with the specified managed object context’s persistent store coordinator.
-       saveJokeInContainer()
+        saveJokeInContainer()
+        resetInputUIComponentes()
     }
     
     private func saveJokeInContainer() {
@@ -56,6 +57,11 @@ class InputViewController: UIViewController {
         } catch {
             print(error.localizedDescription)
         }
+    }
+    
+    private func resetInputUIComponentes() {
+        sentence?.text = ""
+        typeSegmentedControl?.selectedSegmentIndex = 0
     }
     /*
      // MARK: - Navigation
