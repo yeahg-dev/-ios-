@@ -8,6 +8,10 @@
 import UIKit
 import CoreData
 
+protocol Fetchable: AnyObject {
+    func fetchJokes()
+}
+
 class AnyWordsPartyTableViewController: UITableViewController {
     
     var container: NSPersistentContainer!
@@ -23,15 +27,12 @@ class AnyWordsPartyTableViewController: UITableViewController {
         }
     }
     
-    func fetchJokes() {
-        do {
-            let jokes = try self.container.viewContext.fetch(Joke.fetchRequest())
-            self.jokes += jokes
-        } catch {
-            print(error.localizedDescription)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let nextViewController = segue.destination as? InputViewController {
+            nextViewController.fetchDeleage = self as Fetchable
         }
     }
-  
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -99,4 +100,16 @@ class AnyWordsPartyTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension AnyWordsPartyTableViewController: Fetchable {
+    
+    func fetchJokes() {
+        do {
+            let jokes = try self.container.viewContext.fetch(Joke.fetchRequest())
+            self.jokes += jokes
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 }

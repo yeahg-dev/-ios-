@@ -14,6 +14,7 @@ class InputViewController: UIViewController {
     @IBOutlet weak var typeSegmentedControl: UISegmentedControl?
     
     var container: NSPersistentContainer!
+    unowned var fetchDeleage: Fetchable!
     
     lazy var category: String? = {
         if typeSegmentedControl?.selectedSegmentIndex == 0 {
@@ -38,6 +39,7 @@ class InputViewController: UIViewController {
         // Returns the entity with the specified name from the managed object model associated with the specified managed object context’s persistent store coordinator.
         saveJokeInContainer()
         resetInputUIComponentes()
+        fetchDeleage.fetchJokes()
     }
     
     private func saveJokeInContainer() {
