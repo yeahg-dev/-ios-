@@ -25,6 +25,7 @@ class AnyWordsPartyTableViewController: UITableViewController {
         guard container != nil else {
             fatalError("This view needs a persistent container.")
         }
+        fetchJokes()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -36,24 +37,20 @@ class AnyWordsPartyTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return jokes.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath)
+        var content = cell.defaultContentConfiguration()
+        content.text = jokes[indexPath.row].body
+        cell.contentConfiguration = content
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -107,9 +104,11 @@ extension AnyWordsPartyTableViewController: Fetchable {
     func fetchJokes() {
         do {
             let jokes = try self.container.viewContext.fetch(Joke.fetchRequest())
-            self.jokes += jokes
+            self.jokes = jokes
         } catch {
             print(error.localizedDescription)
         }
+        // TODO: 호출 위치 이동
+        tableView.reloadData()
     }
 }
