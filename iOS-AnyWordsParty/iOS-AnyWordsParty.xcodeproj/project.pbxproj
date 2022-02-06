@@ -45,11 +45,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		638E6D8A27AFEC380092B324 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63F906A827ABBE2700451844 /* Main.storyboard */,
+				63F906AD27ABBE2900451844 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		638E6D8B27AFEC530092B324 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				63F906B827ABFEC000451844 /* InputViewController.swift */,
+				63F906B627ABC5EA00451844 /* AnyWordsPartyTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		638E6D8C27AFEC770092B324 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				63F906A227ABBE2700451844 /* AppDelegate.swift */,
+				63F906A427ABBE2700451844 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		638E6D8D27AFECAF0092B324 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63F906BA27AC039500451844 /* JokeModel.xcdatamodeld */,
+				63F906BD27AC0D2E00451844 /* Joke+CoreDataClass.swift */,
+				63F906BE27AC0D2E00451844 /* Joke+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		638E6D8E27AFECD40092B324 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				63F906AB27ABBE2900451844 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		63F9069627ABBE2700451844 = {
 			isa = PBXGroup;
 			children = (
-				63F906BD27AC0D2E00451844 /* Joke+CoreDataClass.swift */,
-				63F906BE27AC0D2E00451844 /* Joke+CoreDataProperties.swift */,
 				63F906A127ABBE2700451844 /* iOS-AnyWordsParty */,
 				63F906A027ABBE2700451844 /* Products */,
 			);
@@ -66,15 +109,12 @@
 		63F906A127ABBE2700451844 /* iOS-AnyWordsParty */ = {
 			isa = PBXGroup;
 			children = (
-				63F906A227ABBE2700451844 /* AppDelegate.swift */,
-				63F906A427ABBE2700451844 /* SceneDelegate.swift */,
-				63F906A827ABBE2700451844 /* Main.storyboard */,
-				63F906BA27AC039500451844 /* JokeModel.xcdatamodeld */,
-				63F906B827ABFEC000451844 /* InputViewController.swift */,
-				63F906B627ABC5EA00451844 /* AnyWordsPartyTableViewController.swift */,
-				63F906AB27ABBE2900451844 /* Assets.xcassets */,
-				63F906AD27ABBE2900451844 /* LaunchScreen.storyboard */,
 				63F906B027ABBE2900451844 /* Info.plist */,
+				638E6D8D27AFECAF0092B324 /* Model */,
+				638E6D8A27AFEC380092B324 /* View */,
+				638E6D8B27AFEC530092B324 /* Controller */,
+				638E6D8C27AFEC770092B324 /* AppDelegate */,
+				638E6D8E27AFECD40092B324 /* Resource */,
 			);
 			path = "iOS-AnyWordsParty";
 			sourceTree = "<group>";
