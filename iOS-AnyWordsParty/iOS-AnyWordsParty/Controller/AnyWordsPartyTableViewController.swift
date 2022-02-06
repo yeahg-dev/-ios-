@@ -47,7 +47,7 @@ class AnyWordsPartyTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath)
         var content = cell.defaultContentConfiguration()
-        content.text = jokes[indexPath.row].body
+        content.text = jokes[safe: indexPath.row]?.body
         cell.contentConfiguration = content
         return cell
     }
