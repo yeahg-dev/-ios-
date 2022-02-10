@@ -54,8 +54,26 @@ class AnyWordsPartyTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            jokes.remove(at: indexPath.row) 
+            let identifier = jokes[indexPath.row].id
+            deleteCoreDataObject(of: identifier!)
+            jokes.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    private func deleteCoreDataObject(of identifier: UUID) {
+        do {
+            let joke = try self.container.viewContext.fetch(Joke.fetchRequest(of: identifier))
+            // TODO: 객체 1개만 fetch해오도록 리팩터링
+            container.viewContext.delete(joke[0])
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        do {
+            try self.container.viewContext.save()
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }
@@ -73,3 +91,4 @@ extension AnyWordsPartyTableViewController: Fetchable {
         tableView.reloadData()
     }
 }
+
