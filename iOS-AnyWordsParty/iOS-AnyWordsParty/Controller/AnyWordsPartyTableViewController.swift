@@ -57,7 +57,7 @@ class AnyWordsPartyTableViewController: UITableViewController {
             let identifier = jokes[indexPath.row].id
             deleteCoreDataObject(of: identifier!)
             jokes.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.reloadData()
         }
     }
     
